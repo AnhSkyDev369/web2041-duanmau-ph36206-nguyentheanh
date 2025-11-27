@@ -5,5 +5,7 @@
 $action = $_GET['action'] ?? '/';
 
 match ($action) {
-    '/'         => (new ProductController)->index(),
+    '/'                     => (new ProductController)->home(),
+    //  CRUD Products
+    'list-product'         => (new ProductController)->index(),
 };

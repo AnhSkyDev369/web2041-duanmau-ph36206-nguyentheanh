@@ -20,7 +20,13 @@ class ProductController extends BaseModel
     }
 
     public function index() {
-        $title = 'Đây là Trang Quản Trị Admin';
+        // $title = 'Đây là Trang Quản Trị Admin';
+        $view = 'product/index';
+        $title = 'Danh sách Sản Phẩm';
+
+        //  Lấy Danh Sách từ CSDL
+        $products = $this->modelProduct->getAll();
+        // var_dump($products);
         require_once PATH_VIEW_MAIN_ADMIN;
     }
 }
