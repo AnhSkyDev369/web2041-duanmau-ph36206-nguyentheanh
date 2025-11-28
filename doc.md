@@ -26,4 +26,5 @@ Mô hình MVC
 
 - Cấu hình DB trong file commons/env.php
 
-- Update
+- Update new push
+- Update new laptop push github
