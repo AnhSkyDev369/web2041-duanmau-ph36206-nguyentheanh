@@ -181,6 +181,7 @@
     </footer>
     <!-- Footer End -->
     </div>
+<script src="<?= BASE_URL . 'templates/js/alert.js'?>"></script></script>
 </body>
 
 </html>

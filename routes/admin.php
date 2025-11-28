@@ -5,9 +5,13 @@
 $action = $_GET['action'] ?? '/';
 
 match ($action) {
-    '/'                     => (new ProductController)->home(),
+    '/'                    => (new ProductController)->home(),
     //  CRUD Products
     'list-product'         => (new ProductController)->index(),
+    'create-product'       => (new ProductController)->create(),
+    'store-product'        => (new ProductController)->store(),
+    'delete-product'       => (new ProductController)->delete(),
+
     //  CRUD Categories
     'list-category'        => (new CategoryController)->index(),
     //  CRUD Comments

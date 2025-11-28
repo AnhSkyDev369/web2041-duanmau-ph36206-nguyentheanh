@@ -15,4 +15,30 @@ class Product extends BaseModel
 
         return $stmt->fetchAll();
     }
+
+    // Viết câu truy vấn tạo sản phẩm mới
+    public function insert($data) {
+        $sql = "INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `quantity`, `image`)  
+                VALUES (NULL, '".$data['category_id']."', '".$data['name']."', '".$data['description']."', '".$data['price']."', '".$data['quantity']."', '".$data['image']."')";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    // Viết câu truy vấn tìm kiếm sản phẩm theo id
+    public function find($id) {
+        $sql = "SELECT * FROM `products` WHERE `id` = $id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetch(); // Sử dụng hàm fetch() để lấy ra 1 dòng dữ liệu (trả về 1 mảng associative)
+    }
+
+    //  Viết câu truy vấn xoá sản phẩm theo id
+    public function delete($id) {
+        $sql = "DELETE FROM `products` WHERE `id` = $id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+    }
 }
