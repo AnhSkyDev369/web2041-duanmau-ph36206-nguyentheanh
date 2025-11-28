@@ -1,5 +1,6 @@
 <!-- Table -->
-<table class="table table-striped table-hover align-middle">
+<div class="container mt-5 mb-5">
+    <table class="table table-striped table-hover align-middle">
         <thead class="table-dark">
             <tr class="text-center">
                 <th>ID</th>
@@ -13,11 +14,11 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach($products as $pro) :?>
+            <?php foreach ($products as $pro): ?>
             <tr class="text-center">
-                <td><?= $pro['id']?></td>
+                <td><?php echo $pro['id']?></td>
                 <td>
-                    <img src="<?=BASE_ASSETS_UPLOADS . $pro['image'] ?>" alt="" width="100px">
+                    <img src="<?php echo BASE_ASSETS_UPLOADS . $pro['image']?>" alt="" width="100px">
                 </td>
                 <td><?= $pro['name']?></td>
                 <td><?= $pro['category_name']?></td>
@@ -30,9 +31,10 @@
                         <button type="button" class="btn btn-outline-success">Sửa</button>
                         <button type="button" class="btn btn-outline-danger">Xoá</button>
                     </div>
-                </td>                  
+                </td>
             </tr>
-            <?php endforeach;?>
+            <?php endforeach; ?>
         </tbody>
-</table>
+        </table>
+</div>      
 <!-- Table End -->
