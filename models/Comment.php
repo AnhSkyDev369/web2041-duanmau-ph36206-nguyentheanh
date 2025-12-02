@@ -15,4 +15,35 @@ class Comment extends BaseModel
 
         return $stmt->fetchAll();
     }
+
+    // Viết truy vấn lưu bình luận mới vào CSDL
+    public function insert($data)
+    {
+        $sql = 'INSERT INTO comments (user_id, product_id, content, status)
+        VALUES (:user_id, :product_id, :content, :status)';
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($data);
+
+        return $stmt->fetchAll();
+    }
+
+    // Viết truy vấn tìm kiếm bình luận theo id
+    public function find($id)
+    {
+        $sql = 'SELECT * FROM `comments` WHERE id = :id';
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+
+        return $stmt->fetch();
+    }
+    
+    // Viết truy vấn xoá bình luận theo id
+    public function delete($id)
+    {
+        $sql = 'DELETE FROM `comments` WHERE id = :id';
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute(['id' => $id]);
+        return $stmt->rowCount();
+    }
+
 }

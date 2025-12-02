@@ -1,5 +1,4 @@
-<a href="<?= BASE_URL_ADMIN . '&action=create-product'?>" type="button" class="btn btn-primary">Thêm Sản Phẩm</a>
-<!-- Table -->
+<a href="<?= BASE_URL_ADMIN . '&action=create-product'?>" type="button" class="btn btn-primary">Thêm Sản Phẩm Mới</a>
 <div class="container mt-5 mb-5">
     <table class="table table-striped table-hover align-middle">
         <thead class="table-dark">
@@ -17,7 +16,7 @@
         <tbody>
             <!-- Hiển thị thông báo xoá sản phẩm thành công với flash message success -->
             <?php if(isset($_SESSION['success'])): ?>
-                <div class="alert alert-success fade show " id="alert-success-delete">
+                <div class="alert alert-success fade show " id="alert-success-product-delete">
                     <?= $_SESSION['success'] ?? '' ?>
                 </div>
                 <?php unset($_SESSION['success']); ?>
@@ -46,6 +45,6 @@
         </tbody>
         </table>
 </div>
-<script src="<?= BASE_URL . 'templates/js/alert.js'?>"></script>
-<!-- Table End -->
+<script src="<?= BASE_URL . 'templates/js/alert-product.js'?>"></script>    
+
 

@@ -16,7 +16,7 @@ class Product extends BaseModel
         return $stmt->fetchAll();
     }
 
-    // Viết câu truy vấn tạo sản phẩm mới
+    // Viết câu truy vấn tạo sản phẩm mới vào CSDL
     public function insert($data) {
         $sql = "INSERT INTO `products` (`id`, `category_id`, `name`, `description`, `price`, `quantity`, `image`)  
                 VALUES (NULL, '".$data['category_id']."', '".$data['name']."', '".$data['description']."', '".$data['price']."', '".$data['quantity']."', '".$data['image']."')";

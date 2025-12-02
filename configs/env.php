@@ -1,7 +1,7 @@
 <?php
 
-define('BASE_URL',          'http://localhost:81/web-2041/web2041-duanmau-php36206-nguyentheanh/');
-define('BASE_URL_ADMIN',          'http://localhost:81/web-2041/web2041-duanmau-php36206-nguyentheanh/?mode=admin');
+define('BASE_URL',          'http://localhost/web-2041/web2041-duanmau-php36206-nguyentheanh/');
+define('BASE_URL_ADMIN',          'http://localhost/web-2041/web2041-duanmau-php36206-nguyentheanh/?mode=admin');
 
 define('PATH_ROOT',         __DIR__ . '/../');
 

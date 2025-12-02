@@ -33,7 +33,7 @@ class ProductController extends BaseModel
     //  Hàm hiển thị form Tạo Mới
     public function create() {
         $view = 'product/create';
-        $title = 'Thêm Sản Phẩm';
+        $title = 'Thêm Sản Phẩm Mới';
         //  Đổ dữ liệu danh sách Category lên view tạo mới
         $categories = $this->modelCategory->getAll();
         require_once PATH_VIEW_MAIN_ADMIN;
@@ -49,6 +49,8 @@ class ProductController extends BaseModel
         try {
             $data = $_POST + $_FILES;
             // var_dump($data);
+
+            // Xử lý ảnh
             if ($data['image']['size'] > 0) {
                 $data['image'] = upload_file('products', $data['image']);
             } else {
@@ -79,6 +81,7 @@ class ProductController extends BaseModel
             $id = $_GET['id'];
             //  Kiểm tả xem id có tồn tại trên hệ thống không
             $pro = $this->modelProduct->find($id);
+            
             if (empty($pro)) {
                 throw new Exception("Product không tồn tại id = $id");
             } else {
